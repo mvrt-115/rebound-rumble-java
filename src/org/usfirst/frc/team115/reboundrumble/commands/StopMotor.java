@@ -1,7 +1,6 @@
 package org.usfirst.frc.team115.reboundrumble.commands;
 
 import org.usfirst.frc.team115.reboundrumble.Robot;
-import org.usfirst.frc.team115.reboundrumble.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.command.Command;
 
