@@ -30,6 +30,10 @@ public class DriveTrain extends Subsystem {
 	public void drive(Joystick joystick) {
 		drive.arcadeDrive(joystick);
 	}
+	
+	public void reset() {
+		//reset gyro, encoders, etc
+	}
 
 	@Override
 	protected void initDefaultCommand() {

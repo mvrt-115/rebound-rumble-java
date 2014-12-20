@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team115.reboundrumble;
 
+import org.usfirst.frc.team115.reboundrumble.commands.Autonomous;
 import org.usfirst.frc.team115.reboundrumble.subsystems.DriveTrain;
 import org.usfirst.frc.team115.reboundrumble.subsystems.Flag;
 import org.usfirst.frc.team115.reboundrumble.subsystems.Loader;
@@ -42,6 +43,8 @@ public class Robot extends IterativeRobot {
 		loader = new Loader();
 		drive = new DriveTrain();
 		flag = new Flag();
+		
+		autonomousCommand = new Autonomous();
 		
 		compressor = new Compressor();
 		compressor.setClosedLoopControl(true);

@@ -5,8 +5,16 @@ import org.usfirst.frc.team115.reboundrumble.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RaiseFlag extends Command {
+	boolean timeout = true;
+	
 	public RaiseFlag() {
 		requires(Robot.flag);
+		timeout = false;
+	}
+	
+	public RaiseFlag(double timeout) {
+		requires(Robot.flag);
+		setTimeout(timeout);
 	}
 
 	@Override
@@ -19,7 +27,7 @@ public class RaiseFlag extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return false;
+		return timeout ? isTimedOut() : false;
 	}
 
 	@Override

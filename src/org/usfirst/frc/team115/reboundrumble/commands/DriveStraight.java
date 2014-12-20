@@ -4,21 +4,25 @@ import org.usfirst.frc.team115.reboundrumble.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ArcadeDriveWithJoystick extends Command {
+public class DriveStraight extends Command {
+	public DriveStraight(double timeout) {
+		requires(Robot.drive);
+		setTimeout(timeout);
+	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.drive);
+		Robot.drive.reset();
 	}
 
 	@Override
 	protected void execute() {
-		Robot.drive.drive(Robot.oi.getJoystick());
+		Robot.drive.drive(1, 1);
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return false; //run until interrupted
+		return isTimedOut();
 	}
 
 	@Override
@@ -30,5 +34,4 @@ public class ArcadeDriveWithJoystick extends Command {
 	protected void interrupted() {
 		end();
 	}
-
 }
