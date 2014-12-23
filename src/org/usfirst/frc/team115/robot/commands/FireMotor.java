@@ -26,13 +26,17 @@ public class FireMotor extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return true;
+		return false;
 	}
 
 	@Override
-	protected void end() {}
+	protected void end() {
+		Robot.shooter.stop();
+	}
 
 	@Override
-	protected void interrupted() {}
+	protected void interrupted() {
+		end();
+	}
 
 }

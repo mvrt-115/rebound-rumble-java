@@ -24,25 +24,23 @@ public class Robot extends IterativeRobot {
 	
 	private Compressor compressor;
 
+	public static OI oi;
 	public static Shooter shooter;
 	public static Loader loader;
-	public static DriveTrain drive;
-	public static OI oi;
-
+	public static DriveTrain drive;;
 	public static Flag flag;
 
     Command autonomousCommand; //null because I don't want to deal with this yet
-
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
-		shooter = new Shooter();
-		loader = new Loader();
-		drive = new DriveTrain();
-		flag = new Flag();
+    	shooter = new Shooter();
+    	loader = new Loader();
+    	drive = new DriveTrain();
+    	flag = new Flag();
+    	oi = new OI();
 		
 		autonomousCommand = new Autonomous();
 		

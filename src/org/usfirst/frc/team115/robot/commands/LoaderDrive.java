@@ -6,16 +6,19 @@ import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class LoaderDrive extends Command {
+	
+	public LoaderDrive() {
+		requires(Robot.loader);
+	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.loader);
 	}
 
 	@Override
 	protected void execute() {
 		try {
-			Robot.loader.setSpeed(Robot.oi.getJoystick().getX());
+			Robot.loader.setSpeed(Robot.oi.getJoystick().getThrottle());
 		} catch (MotorSpeedException e) {
 			end();
 			e.printStackTrace();

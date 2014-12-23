@@ -11,7 +11,9 @@ public class Shooter extends VBusMotorSystem {
 	public Shooter() {
 		super();
 		shooter1 = new CANTalon(RobotMap.SHOOTER_1);
+		shooter1.reverseOutput(true);
 		shooter2 = new CANTalon(RobotMap.SHOOTER_2);
+		shooter2.reverseOutput(true);
 		motors.add(shooter1);
 		motors.add(shooter2);
 	}
@@ -20,5 +22,4 @@ public class Shooter extends VBusMotorSystem {
 	protected void initDefaultCommand() {
 		setDefaultCommand(new StopMotor());
 	}
-
 }
