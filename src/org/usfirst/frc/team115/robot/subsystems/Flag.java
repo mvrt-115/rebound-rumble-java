@@ -1,7 +1,7 @@
-package org.usfirst.frc.team115.reboundrumble.subsystems;
+package org.usfirst.frc.team115.robot.subsystems;
 
-import org.usfirst.frc.team115.reboundrumble.RobotMap;
-import org.usfirst.frc.team115.reboundrumble.commands.LowerFlag;
+import org.usfirst.frc.team115.robot.RobotMap;
+import org.usfirst.frc.team115.robot.commands.LowerFlag;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;

@@ -1,8 +1,8 @@
-package org.usfirst.frc.team115.reboundrumble;
+package org.usfirst.frc.team115.robot;
 
-import org.usfirst.frc.team115.reboundrumble.commands.FireMotor;
-import org.usfirst.frc.team115.reboundrumble.commands.RaiseFlag;
-import org.usfirst.frc.team115.reboundrumble.commands.StopMotor;
+import org.usfirst.frc.team115.robot.commands.FireMotor;
+import org.usfirst.frc.team115.robot.commands.RaiseFlag;
+import org.usfirst.frc.team115.robot.commands.StopMotor;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

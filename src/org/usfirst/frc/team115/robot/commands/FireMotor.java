@@ -1,8 +1,8 @@
-package org.usfirst.frc.team115.reboundrumble.commands;
+package org.usfirst.frc.team115.robot.commands;
 
-import org.usfirst.frc.team115.reboundrumble.Constants;
-import org.usfirst.frc.team115.reboundrumble.Robot;
-import org.usfirst.frc.team115.reboundrumble.exceptions.MotorSpeedException;
+import org.usfirst.frc.team115.robot.Constants;
+import org.usfirst.frc.team115.robot.Robot;
+import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.command.Command;
 

@@ -1,4 +1,4 @@
-package org.usfirst.frc.team115.reboundrumble.commands;
+package org.usfirst.frc.team115.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 

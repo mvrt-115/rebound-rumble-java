@@ -1,8 +1,8 @@
-package org.usfirst.frc.team115.reboundrumble.subsystems;
+package org.usfirst.frc.team115.robot.subsystems;
 
 import java.util.ArrayList;
 
-import org.usfirst.frc.team115.reboundrumble.exceptions.MotorSpeedException;
+import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;

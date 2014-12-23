@@ -1,4 +1,4 @@
-package org.usfirst.frc.team115.reboundrumble.exceptions;
+package org.usfirst.frc.team115.robot.exceptions;
 
 public class MotorSpeedException extends Exception {
 	private static final long serialVersionUID = 7843672830611527699L;

@@ -1,7 +1,7 @@
-package org.usfirst.frc.team115.reboundrumble.subsystems;
+package org.usfirst.frc.team115.robot.subsystems;
 
-import org.usfirst.frc.team115.reboundrumble.RobotMap;
-import org.usfirst.frc.team115.reboundrumble.commands.StopMotor;
+import org.usfirst.frc.team115.robot.RobotMap;
+import org.usfirst.frc.team115.robot.commands.StopMotor;
 
 import edu.wpi.first.wpilibj.CANTalon;
 
