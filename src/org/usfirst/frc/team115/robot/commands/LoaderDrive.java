@@ -3,6 +3,7 @@ package org.usfirst.frc.team115.robot.commands;
 import org.usfirst.frc.team115.robot.Robot;
 import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -27,12 +28,15 @@ public class LoaderDrive extends Command {
 	 */
 	@Override
 	protected void execute() {
-		try {
-			Robot.loader.setSpeed(Robot.oi.getJoystick().getThrottle());
-		} catch (MotorSpeedException e) {
-			end();
-			e.printStackTrace();
-			//TODO Print error and constrain
+		if (DriverStation.getInstance().getBatteryVoltage() < 8 && Robot.loader.getSpeed() != 0) {
+			Robot.loader.stop();
+		} else {
+			try {
+				Robot.loader.setSpeed(Robot.oi.getJoystick().getX());
+			} catch (MotorSpeedException e) {
+				end();
+				e.printStackTrace();
+			}
 		}
 	}
 
