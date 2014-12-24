@@ -5,7 +5,7 @@ public class MotorSpeedException extends Exception {
 	private final double speed;
 
 	public MotorSpeedException (String err, double speed) {
-		super(err + "\nSpeed of " + speed + " is not allowed!");
+		super(err + "\nSpeed of " + speed + " is not allowed!!");
 		this.speed = speed;
 	}
 	
