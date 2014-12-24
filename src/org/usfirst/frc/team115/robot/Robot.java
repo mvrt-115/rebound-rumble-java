@@ -8,10 +8,12 @@ import org.usfirst.frc.team115.robot.subsystems.Flag;
 import org.usfirst.frc.team115.robot.subsystems.Loader;
 import org.usfirst.frc.team115.robot.subsystems.Shooter;
 
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +31,9 @@ public class Robot extends IterativeRobot {
 	public static Flag flag;
 	public static CompressorSystem compressor;
 
+	public Gyro gyro;
+
+
     Command autonomousCommand; //null because I don't want to deal with this yet
     
     /**
@@ -43,6 +48,8 @@ public class Robot extends IterativeRobot {
     	flag = new Flag();
     	compressor = new CompressorSystem();
     	oi = new OI();
+    	
+    	gyro = new Gyro(0);
 		
 		autonomousCommand = new Autonomous(); //initializes the command for autonomous
     }
@@ -88,6 +95,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	SmartDashboard.putNumber("Gyro", gyro.getAngle());
         Scheduler.getInstance().run();
     }
     
