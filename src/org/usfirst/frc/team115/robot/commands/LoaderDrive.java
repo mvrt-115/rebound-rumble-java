@@ -1,5 +1,6 @@
 package org.usfirst.frc.team115.robot.commands;
 
+import org.usfirst.frc.team115.robot.Constants;
 import org.usfirst.frc.team115.robot.Robot;
 import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
@@ -28,7 +29,7 @@ public class LoaderDrive extends Command {
 	 */
 	@Override
 	protected void execute() {
-		if (DriverStation.getInstance().getBatteryVoltage() < 8 && Robot.loader.getSpeed() != 0) {
+		if (DriverStation.getInstance().getBatteryVoltage() < Constants.LOADER_BROWN && Robot.loader.getSpeed() != 0) {
 			Robot.loader.stop();
 		} else {
 			try {
