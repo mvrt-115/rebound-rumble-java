@@ -2,7 +2,6 @@ package org.usfirst.frc.team115.robot;
 
 import org.usfirst.frc.team115.robot.commands.FireMotor;
 import org.usfirst.frc.team115.robot.commands.RaiseFlag;
-import org.usfirst.frc.team115.robot.commands.StopMotor;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -20,7 +19,7 @@ public class OI {
 		triggerButton = new JoystickButton(joystick, RobotMap.SHOOT);
 		flagButton = new JoystickButton(joystick, RobotMap.FLAG);
 		
-		//add triggers
+		//adds commands to run on various joystick actions
 		triggerButton.toggleWhenPressed(new FireMotor());
 		flagButton.toggleWhenPressed(new RaiseFlag());
 	}

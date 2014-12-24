@@ -6,11 +6,19 @@ import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Controls the firing of the shooter
+ * @author Lee Mracek
+ *
+ */
 public class FireMotor extends Command {
 	public FireMotor() {
 		requires(Robot.shooter);
 	}
 
+	/**
+	 * Sets the motor speed to max but checks for MotorSpeedException
+	 */
 	@Override
 	protected void initialize() {
 		try {
@@ -29,6 +37,9 @@ public class FireMotor extends Command {
 		return false;
 	}
 
+	/**
+	 * Prevents runaway motor disorder
+	 */
 	@Override
 	protected void end() {
 		Robot.shooter.stop();

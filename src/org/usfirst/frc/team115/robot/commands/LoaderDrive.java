@@ -5,16 +5,26 @@ import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * @author Lee Mracek
+ * Command to drive the loader
+ */
 public class LoaderDrive extends Command {
 	
+	/**
+	 * Defines subsystems required by the command
+	 */
 	public LoaderDrive() {
 		requires(Robot.loader);
 	}
-
+	
 	@Override
 	protected void initialize() {
 	}
 
+	/**
+	 * Sets the motor to the throttle speed, and catches MotorSpeedException
+	 */
 	@Override
 	protected void execute() {
 		try {
@@ -22,6 +32,7 @@ public class LoaderDrive extends Command {
 		} catch (MotorSpeedException e) {
 			end();
 			e.printStackTrace();
+			//TODO Print error and constrain
 		}
 	}
 
@@ -30,6 +41,7 @@ public class LoaderDrive extends Command {
 		return false; //runs until completion
 	}
 
+	//Prevent runaway robot disorder
 	@Override
 	protected void end() {
 		Robot.loader.stop();;

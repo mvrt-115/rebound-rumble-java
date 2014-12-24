@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 public class Loader extends VBusMotorSystem {
 	private CANTalon roller, elevator;
 	
+	//initializes the motors and adds them to the ArrayList
 	public Loader() {
 		super();
 		roller = new CANTalon(RobotMap.ROLLER);
@@ -15,7 +16,10 @@ public class Loader extends VBusMotorSystem {
 		motors.add(roller);
 		motors.add(elevator);
 	}
-
+	
+	/**
+	 * Initializes the default command of the subsystem.
+	 */
 	@Override
 	protected void initDefaultCommand() {
 		setDefaultCommand(new LoaderDrive());

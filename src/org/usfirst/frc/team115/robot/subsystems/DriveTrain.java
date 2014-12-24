@@ -10,10 +10,13 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveTrain extends Subsystem {
-	private SpeedController frontLeftMotor, frontRightMotor,
+	private CANTalon frontLeftMotor, frontRightMotor,
 						backLeftMotor, backRightMotor;
 	private RobotDrive drive;
 	
+	/**
+	 * Initializes each other motors based on ports set in RobotMap
+	 */
 	public DriveTrain() {
 		super();
 		backLeftMotor = new CANTalon(RobotMap.BACK_LEFT_DRIVE);
@@ -23,18 +26,32 @@ public class DriveTrain extends Subsystem {
 		drive = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
 	}
 	
+	/**
+	 * Drives the robot
+	 * @param left The speed of the left motors
+	 * @param right The speed of the right motors
+	 */
 	public void drive(double left, double right) {
 		drive.arcadeDrive(left, right);
 	}
-	
+	/**
+	 * Drives the robot
+	 * @param joystick The joystick to drive based on
+	 */
 	public void drive(Joystick joystick) {
 		drive.arcadeDrive(joystick);
 	}
 	
+	/**
+	 * Resets the gyro, encoders, etc
+	 */
 	public void reset() {
 		//reset gyro, encoders, etc
 	}
-
+	
+	/**
+	 * Initializes the default command of the subsystem.
+	 */
 	@Override
 	protected void initDefaultCommand() {
 		setDefaultCommand(new ArcadeDriveWithJoystick());

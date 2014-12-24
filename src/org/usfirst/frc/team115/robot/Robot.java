@@ -31,27 +31,31 @@ public class Robot extends IterativeRobot {
 	public static Flag flag;
 
     Command autonomousCommand; //null because I don't want to deal with this yet
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
+    	//initializes each subsystem on the robot
     	shooter = new Shooter();
     	loader = new Loader();
     	drive = new DriveTrain();
     	flag = new Flag();
     	oi = new OI();
 		
-		autonomousCommand = new Autonomous();
+		autonomousCommand = new Autonomous(); //initializes the command for autonomous
 		
 		compressor = new Compressor();
-		compressor.setClosedLoopControl(true);
+		compressor.setClosedLoopControl(true); //same as in LabVIEW
     }
 	
+    //runs periodically when the robot is disabled
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
+	//Initialize and run the command at the start of autonomous
     public void autonomousInit() {
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
@@ -64,6 +68,9 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     }
 
+    /**
+     * This method is called once when teleop starts
+     */
     public void teleopInit() {
 		// This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 

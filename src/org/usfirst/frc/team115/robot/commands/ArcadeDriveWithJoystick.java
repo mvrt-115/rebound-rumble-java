@@ -4,7 +4,13 @@ import org.usfirst.frc.team115.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Command to drive the robot using the joystick.
+ * @author Lee Mracek
+ *
+ */
 public class ArcadeDriveWithJoystick extends Command {
+	
 	public ArcadeDriveWithJoystick() {
 		requires(Robot.drive);
 	}
@@ -13,6 +19,9 @@ public class ArcadeDriveWithJoystick extends Command {
 	protected void initialize() {
 	}
 
+	/**
+	 * Drives the robot based on a joystick
+	 */
 	@Override
 	protected void execute() {
 		Robot.drive.drive(Robot.oi.getJoystick());
@@ -23,6 +32,9 @@ public class ArcadeDriveWithJoystick extends Command {
 		return false; //run until interrupted
 	}
 
+	/**
+	 * Stops the drivetrain when the command ends
+	 */
 	@Override
 	protected void end() {
 		Robot.drive.drive(0, 0);

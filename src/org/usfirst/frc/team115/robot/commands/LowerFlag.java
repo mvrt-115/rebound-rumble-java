@@ -4,11 +4,21 @@ import org.usfirst.frc.team115.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * @author Lee Mracek
+ * This class purely lowers the flag
+ */
 public class LowerFlag extends Command {
+	/**
+	 * Specifies required subsystem
+	 */
 	public LowerFlag() {
 		requires(Robot.flag);
 	}
-
+	
+	/**
+	 * Sets the flag to down
+	 */
 	@Override
 	protected void initialize() {
 		Robot.flag.set(Robot.flag.DOWN);
@@ -17,6 +27,9 @@ public class LowerFlag extends Command {
 	@Override
 	protected void execute() {}
 
+	/**
+	 * Command is instantly finished
+	 */
 	@Override
 	protected boolean isFinished() {
 		return true;
