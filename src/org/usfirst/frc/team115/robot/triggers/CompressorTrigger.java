@@ -1,6 +1,7 @@
 package org.usfirst.frc.team115.robot.triggers;
 
 import org.usfirst.frc.team115.robot.Constants;
+import org.usfirst.frc.team115.robot.Robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.buttons.Trigger;
@@ -13,6 +14,6 @@ public class CompressorTrigger extends Trigger {
 
 	@Override
 	public boolean get() {
-		return DriverStation.getInstance().getBatteryVoltage() < Constants.COMPRESSOR_BROWN;
+		return Robot.drive.getCurrent() > Constants.COMPRESSOR_BROWN;
 	}
 }

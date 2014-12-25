@@ -9,20 +9,23 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class DriveTrain extends Subsystem {
-	private CANTalon frontLeftMotor, frontRightMotor,
-						backLeftMotor, backRightMotor;
+	private CANTalon[] motors = new CANTalon[4];
 	private RobotDrive drive;
+	private final int BACK_LEFT = 0;
+	private final int BACK_RIGHT = 1;
+	private final int FRONT_LEFT = 2;
+	private final int FRONT_RIGHT = 3;
 	
 	/**
 	 * Initializes each other motors based on ports set in RobotMap
 	 */
 	public DriveTrain() {
 		super();
-		backLeftMotor = new CANTalon(RobotMap.BACK_LEFT_DRIVE);
-		backRightMotor = new CANTalon(RobotMap.BACK_RIGHT_DRIVE);
-		frontLeftMotor = new CANTalon(RobotMap.FRONT_LEFT_DRIVE); 
-		frontRightMotor = new CANTalon(RobotMap.FRONT_RIGHT_DRIVE);
-		drive = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
+		motors[BACK_LEFT] = new CANTalon(RobotMap.BACK_LEFT_DRIVE);
+		motors[BACK_RIGHT] = new CANTalon(RobotMap.BACK_RIGHT_DRIVE);
+		motors[FRONT_LEFT] = new CANTalon(RobotMap.FRONT_LEFT_DRIVE); 
+		motors[FRONT_RIGHT] = new CANTalon(RobotMap.FRONT_RIGHT_DRIVE);
+		drive = new RobotDrive(motors[FRONT_LEFT], motors[BACK_LEFT], motors[FRONT_RIGHT], motors[BACK_LEFT]);
 	}
 	
 	/**
@@ -54,6 +57,13 @@ public class DriveTrain extends Subsystem {
 	@Override
 	protected void initDefaultCommand() {
 		setDefaultCommand(new ArcadeDriveWithJoystick());
+	}
+	
+	public double getCurrent() {
+		double current = 0;
+		for (CANTalon motor : motors)
+			current += motor.getOutputCurrent();
+		return current;
 	}
 
 }
