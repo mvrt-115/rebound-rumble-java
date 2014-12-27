@@ -31,8 +31,6 @@ public class Robot extends IterativeRobot {
 	public static Flag flag;
 	public static CompressorSystem compressor;
 
-	public Gyro gyro;
-
 
     Command autonomousCommand; //null because I don't want to deal with this yet
     
@@ -48,8 +46,6 @@ public class Robot extends IterativeRobot {
     	flag = new Flag();
     	compressor = new CompressorSystem();
     	oi = new OI();
-    	
-    	gyro = new Gyro(0);
 		
 		autonomousCommand = new Autonomous(); //initializes the command for autonomous
     }
@@ -95,8 +91,6 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	SmartDashboard.putNumber("Gyro", gyro.getAngle());
-    	System.out.println("Gyro angle" + gyro.getAngle());
         Scheduler.getInstance().run();
     }
     

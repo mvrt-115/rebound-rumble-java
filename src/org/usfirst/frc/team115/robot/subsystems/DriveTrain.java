@@ -3,7 +3,9 @@ package org.usfirst.frc.team115.robot.subsystems;
 import org.usfirst.frc.team115.robot.RobotMap;
 import org.usfirst.frc.team115.robot.commands.ArcadeDriveWithJoystick;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -12,6 +14,7 @@ public class DriveTrain extends Subsystem {
 	private CANTalon frontLeftMotor, frontRightMotor,
 						backLeftMotor, backRightMotor;
 	private RobotDrive drive;
+	private Gyro gyro;
 	
 	/**
 	 * Initializes each other motors based on ports set in RobotMap
@@ -23,6 +26,8 @@ public class DriveTrain extends Subsystem {
 		frontLeftMotor = new CANTalon(RobotMap.FRONT_LEFT_DRIVE); 
 		frontRightMotor = new CANTalon(RobotMap.FRONT_RIGHT_DRIVE);
 		drive = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
+		
+		initGyro();
 	}
 	
 	/**
@@ -45,7 +50,19 @@ public class DriveTrain extends Subsystem {
 	 * Resets the gyro, encoders, etc
 	 */
 	public void reset() {
-		//reset gyro, encoders, etc
+		gyro.reset();
+	}
+	
+	public double getAngle() {
+		return gyro.getAngle();
+	}
+	
+	public double getRate() {
+		return gyro.getRate();
+	}
+	
+	public void initGyro() {
+		gyro = new Gyro(0);
 	}
 	
 	/**

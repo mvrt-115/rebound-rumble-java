@@ -1,6 +1,7 @@
 package org.usfirst.frc.team115.robot;
 
 import org.usfirst.frc.team115.robot.commands.DisableCompressor;
+import org.usfirst.frc.team115.robot.commands.DriveStraightWithJoystick;
 import org.usfirst.frc.team115.robot.commands.EnableCompressor;
 import org.usfirst.frc.team115.robot.commands.FireMotor;
 import org.usfirst.frc.team115.robot.commands.RaiseFlag;
@@ -16,18 +17,20 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	private Joystick joystick;
-	private JoystickButton triggerButton, flagButton;
+	private JoystickButton triggerButton, flagButton, straightButton;
 	private CompressorTrigger disableCompTrigger = new CompressorTrigger();
 	
 	public OI() {
 		joystick = new Joystick(RobotMap.JOYSTICK);
 		triggerButton = new JoystickButton(joystick, RobotMap.SHOOT);
 		flagButton = new JoystickButton(joystick, RobotMap.FLAG);
+		straightButton = new JoystickButton(joystick, RobotMap.STRAIGHT);
 		
 		//add triggers
 		triggerButton.whenPressed(new FireMotor());
 		triggerButton.whenReleased(new StopMotor());
 		flagButton.toggleWhenPressed(new RaiseFlag());
+		straightButton.toggleWhenPressed(new DriveStraightWithJoystick());
 		
 		disableCompTrigger.whenActive(new DisableCompressor());
 		disableCompTrigger.whenInactive(new EnableCompressor());
