@@ -25,7 +25,7 @@ public class DriveTrain extends Subsystem {
 		motors[BACK_RIGHT] = new CANTalon(RobotMap.BACK_RIGHT_DRIVE);
 		motors[FRONT_LEFT] = new CANTalon(RobotMap.FRONT_LEFT_DRIVE); 
 		motors[FRONT_RIGHT] = new CANTalon(RobotMap.FRONT_RIGHT_DRIVE);
-		drive = new RobotDrive(motors[FRONT_LEFT], motors[BACK_LEFT], motors[FRONT_RIGHT], motors[BACK_LEFT]);
+		drive = new RobotDrive(motors[FRONT_LEFT], motors[BACK_LEFT], motors[FRONT_RIGHT], motors[BACK_RIGHT]);
 	}
 	
 	/**
