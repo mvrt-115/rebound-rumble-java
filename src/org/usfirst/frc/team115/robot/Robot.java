@@ -25,18 +25,18 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static Shooter shooter;
 	public static Loader loader;
-	public static DriveTrain drive;;
+	public static DriveTrain drive;
 	public static Flag flag;
 	public static CompressorSystem compressor;
 
-    Command autonomousCommand; //null because I don't want to deal with this yet
+    Command autonomousCommand; // null because I don't want to deal with this yet
     
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-    	//initializes each subsystem on the robot
+    	// initializes each subsystem on the robot
     	shooter = new Shooter();
     	loader = new Loader();
     	drive = new DriveTrain();
@@ -44,15 +44,16 @@ public class Robot extends IterativeRobot {
     	compressor = new CompressorSystem();
     	oi = new OI();
 		
-		autonomousCommand = new Autonomous(); //initializes the command for autonomous
+    	// initializes command for autonomous
+		autonomousCommand = new Autonomous();
     }
 	
-    //runs periodically when the robot is disabled
+    // runs periodically when the robot is disabled
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
-	//Initialize and run the command at the start of autonomous
+	// Initialize and run the command at the start of autonomous
     public void autonomousInit() {
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();

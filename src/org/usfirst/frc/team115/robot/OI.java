@@ -24,7 +24,7 @@ public class OI {
 		triggerButton = new JoystickButton(joystick, RobotMap.SHOOT);
 		flagButton = new JoystickButton(joystick, RobotMap.FLAG);
 		
-		//add triggers
+		// add triggers
 		triggerButton.whenPressed(new FireMotor());
 		triggerButton.whenReleased(new StopMotor());
 		flagButton.toggleWhenPressed(new RaiseFlag());

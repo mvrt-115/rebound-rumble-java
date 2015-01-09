@@ -15,7 +15,7 @@ public class DriveStraight extends Command {
 	 * Default constructor!
 	 */
 	public DriveStraight() {
-		this(1); //default timeout is 1, dammit
+		this(1); // default timeout is 1, dammit
 	}
 	
 	/**
@@ -42,7 +42,7 @@ public class DriveStraight extends Command {
 	protected void execute() {
 		double speed = Robot.oi.getJoystick().getY();
 		Robot.drive.drive(speed, speed);
-		//TODO add gyro
+		// TODO add gyro
 	}
 
 	@Override
@@ -62,5 +62,5 @@ public class DriveStraight extends Command {
 	protected void interrupted() {
 		end();
 	}
-	//TODO add gyro
+	// TODO add gyro
 }

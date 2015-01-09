@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Autonomous extends CommandGroup {
 	public Autonomous() {
-		addSequential(new RaiseFlag(5)); //adds sequential commands to the scheduler.
-		addSequential(new DriveStraight(4)); //drive using time rather than distance (goddamnit mech... I want encoders)
+		addSequential(new RaiseFlag(5)); // adds sequential commands to the scheduler.
+		addSequential(new DriveStraight(4)); // drive using time rather than distance (goddamnit mech... I want encoders)
 	}
 }

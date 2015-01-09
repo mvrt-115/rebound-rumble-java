@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 
 public abstract class VBusMotorSystem extends Subsystem {
+	
 	/* 
 	* motors is an ArrayList that contains all the motors in the system. These are
 	* added by the subclass.
@@ -37,14 +38,17 @@ public abstract class VBusMotorSystem extends Subsystem {
 	 * @throws MotorSpeedException
 	 */
 	public void setSpeed(double speed) throws MotorSpeedException {
-		this.speed = speed; //sets the speed of the system
-		if (Math.abs(speed) <= 1) { //checks if the speed is within acceptable VBus range.
+		this.speed = speed; // sets the speed of the system
+		// checks if the speed is within acceptable VBus range.
+		if (Math.abs(speed) <= 1) {
 			for (CANTalon motor : motors) {
-				motor.set(invert ? -1 : 1 * this.speed); //sets each motor. If the output is inverted, multiplies by -1.
+				// sets each motor. If the output is inverted, multiplies by -1.
+				motor.set(invert ? -1 : 1 * this.speed);
 			}
 		} else {
+			// throws a custom exception if the speed is not acceptable.
 			throw new MotorSpeedException("Shooter speed cannot be "
-					+ "greater than 1 or less than -1", speed); //throws a custom exception if the speed is not acceptable.
+					+ "greater than 1 or less than -1", speed);
 		}
 	}
 	

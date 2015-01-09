@@ -48,7 +48,7 @@ public class DriveTrain extends Subsystem {
 	 * Resets the gyro, encoders, etc
 	 */
 	public void reset() {
-		//reset gyro, encoders, etc
+		// reset gyro, encoders, etc
 	}
 	
 	/**

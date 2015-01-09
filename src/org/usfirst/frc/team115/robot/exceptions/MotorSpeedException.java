@@ -5,7 +5,7 @@ package org.usfirst.frc.team115.robot.exceptions;
  * This class is a custom exception that is specifically designed for motor speed values
  */
 public class MotorSpeedException extends Exception {
-	private static final long serialVersionUID = 7843672830611527699L; //serialVersionUID because exceptions are serializable
+	private static final long serialVersionUID = 7843672830611527699L; // serialVersionUID because exceptions are serializable
 	private final double speed;
 	
 	/**

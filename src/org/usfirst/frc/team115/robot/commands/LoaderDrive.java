@@ -43,10 +43,10 @@ public class LoaderDrive extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return false; //runs until completion
+		return false; // runs until completion
 	}
 
-	//Prevent runaway robot disorder
+	// Prevent runaway robot disorder
 	@Override
 	protected void end() {
 		Robot.loader.stop();;

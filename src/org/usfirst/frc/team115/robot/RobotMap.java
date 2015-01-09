@@ -7,18 +7,18 @@ package org.usfirst.frc.team115.robot;
  * @author Lee Mracek
  */
 public class RobotMap {
-	//pneumatics
+	// pneumatics
 	public static final int FLAG_SOLENOID_1 = 0;
 	public static final int FLAG_SOLENOID_2 = 1;
 	
-	//joystick
+	// joystick
 	public static final int JOYSTICK = 0;
 	
-	//joystick buttons
+	// joystick buttons
 	public static final int SHOOT = 1;
 	public static final int FLAG = 6;
 	
-	//motors
+	// motors
     public static final int SHOOTER_1 = 3;
     public static final int SHOOTER_2 = 4;
     public static final int ROLLER = 2;

@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  * Command deals with the command toggling
  */
 public class RaiseFlag extends Command {
-	boolean timeout = true; //specify if we need to set a timeout
+	boolean timeout = true; // specify if we need to set a timeout
 	
 	/**
 	 * Default constructor does not set timeout

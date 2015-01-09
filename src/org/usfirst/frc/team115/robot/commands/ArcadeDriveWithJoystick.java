@@ -29,7 +29,7 @@ public class ArcadeDriveWithJoystick extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return false; //run until interrupted
+		return false; // run until interrupted
 	}
 
 	/**

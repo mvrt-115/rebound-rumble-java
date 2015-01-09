@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Flag extends Subsystem {
 	private DoubleSolenoid flag;
-	public final boolean DOWN = false; //constants that define boolean values for states of the solenoid
+	public final boolean DOWN = false; // constants that define boolean values for states of the solenoid
 	public final boolean UP = true;
 	
 	public Flag() {

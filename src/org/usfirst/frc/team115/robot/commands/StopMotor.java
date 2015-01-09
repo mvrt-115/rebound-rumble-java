@@ -36,7 +36,7 @@ public class StopMotor extends Command {
 	 */
 	@Override
 	protected boolean isFinished() {
-		return true; //returns true because we only care about initialization.
+		return true; // returns true because we only care about initialization.
 	}
 	
 	/**
