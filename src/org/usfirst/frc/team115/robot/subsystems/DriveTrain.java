@@ -34,7 +34,7 @@ public class DriveTrain extends Subsystem {
 	 * @param right The speed of the right motors
 	 */
 	public void drive(double left, double right) {
-		drive.arcadeDrive(left, right);
+		drive.setLeftRightMotorOutputs(left, right);
 	}
 	/**
 	 * Drives the robot
