@@ -5,6 +5,7 @@ import org.usfirst.frc.team115.robot.Robot;
 import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Controls the firing of the shooter
@@ -23,6 +24,7 @@ public class FireMotor extends Command {
 	protected void initialize() {
 		try {
 			Robot.shooter.setSpeed(Constants.SHOOTER_MAX);
+			SmartDashboard.putNumber("shooter_speed", Robot.shooter.getSpeed());
 		} catch (MotorSpeedException e) {
 			Robot.shooter.stop();
 			e.printStackTrace();

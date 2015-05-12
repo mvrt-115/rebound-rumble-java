@@ -6,6 +6,7 @@ import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * @author Lee Mracek
@@ -29,16 +30,18 @@ public class LoaderDrive extends Command {
 	 */
 	@Override
 	protected void execute() {
-		if (DriverStation.getInstance().getBatteryVoltage() < Constants.LOADER_BROWN && Robot.loader.getSpeed() != 0) {
-			Robot.loader.stop();
-		} else {
+//		if (DriverStation.getInstance().getBatteryVoltage() < Constants.LOADER_BROWN && Robot.loader.getSpeed() != 0) {
+//			Robot.loader.stop();
+//			SmartDashboard.putString("Loader State", "stopping");
+//		} else {
 			try {
-				Robot.loader.setSpeed(Robot.oi.getJoystick().getX());
+				SmartDashboard.putString("Loader State", "running");
+				Robot.loader.setSpeed(Robot.oi.getJoystick().getThrottle());
 			} catch (MotorSpeedException e) {
 				end();
 				e.printStackTrace();
 			}
-		}
+//		}
 	}
 
 	@Override

@@ -14,7 +14,7 @@ public class Flag extends Subsystem {
 	
 	public Flag() {
 		super();
-		flag = new DoubleSolenoid(RobotMap.FLAG_SOLENOID_1, RobotMap.FLAG_SOLENOID_2); //initializes the double solenoid with two ports
+		//flag = new DoubleSolenoid(RobotMap.FLAG_SOLENOID_1, RobotMap.FLAG_SOLENOID_2); //initializes the double solenoid with two ports
 	}
 	
 	/**
@@ -22,7 +22,7 @@ public class Flag extends Subsystem {
 	 * @param state
 	 */
 	public void set(boolean state) {
-		flag.set(state ? Value.kForward : Value.kReverse); //ternary operator between forward and reverse
+		//flag.set(state ? Value.kForward : Value.kReverse); //ternary operator between forward and reverse
 	}
 	
 	/**
@@ -30,7 +30,7 @@ public class Flag extends Subsystem {
 	 */
 	@Override
 	protected void initDefaultCommand() {
-		setDefaultCommand(new LowerFlag());
+		//setDefaultCommand(new LowerFlag());
 	}
 
 }
