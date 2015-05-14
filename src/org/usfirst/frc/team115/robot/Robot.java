@@ -3,6 +3,7 @@ package org.usfirst.frc.team115.robot;
 
 import org.usfirst.frc.team115.robot.commands.Autonomous;
 import org.usfirst.frc.team115.robot.commands.led.FadePulse;
+import org.usfirst.frc.team115.robot.commands.led.FlashColor;
 import org.usfirst.frc.team115.robot.commands.led.Rainbow;
 import org.usfirst.frc.team115.robot.commands.led.SetColor;
 import org.usfirst.frc.team115.robot.subsystems.DriveTrain;
@@ -49,13 +50,13 @@ public class Robot extends IterativeRobot {
     	drive = new DriveTrain();
     	oi = new OI();
 		
-    	//ledStripPrimary = new LEDStrip(5803, "10.1.15.16");
+    	ledStripPrimary = new LEDStrip(5803, "10.1.15.16");
     	
     	// initializes command for autonomous
 		autonomousCommand = new Autonomous();
     }
 	
-    // runs periodically when the robot is disabled
+    // runs periodically when the robot is  disabled
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
@@ -82,6 +83,7 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
 		//new FadePulse(LEDStrip.PURPLE, LEDStrip.GOLD, (short) 5000).start();
+    	new FlashColor(LEDStrip.PURPLE, (short) 1000, (short) 500).start();
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -90,7 +92,7 @@ public class Robot extends IterativeRobot {
      * You can use it to reset subsystems before shutting down.
      */
     public void disabledInit(){
-    	//new Rainbow((short) 3000).start();;
+    	new Rainbow((short) 3000).start();
     }
 
     /**
