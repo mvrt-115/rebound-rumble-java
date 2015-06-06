@@ -52,7 +52,7 @@ public class LoaderDrive extends Command {
 	// Prevent runaway robot disorder
 	@Override
 	protected void end() {
-		Robot.loader.stop();;
+		Robot.loader.stop();
 	}
 
 	@Override

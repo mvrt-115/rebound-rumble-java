@@ -18,6 +18,7 @@ public class RobotMap {
 
 	// joystick buttons
 	public static final int SHOOT = 1;
+	public static final int DRIVE = 3;
 	public static final int FLAG = 6;
 
 	// motors

@@ -83,8 +83,7 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
 		//new FadePulse(LEDStrip.PURPLE, LEDStrip.GOLD, (short) 5000).start();
-    	new FlashColor(LEDStrip.PURPLE, (short) 1000, (short) 500).start();
-        if (autonomousCommand != null) autonomousCommand.cancel();
+    	if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
     /**
@@ -99,6 +98,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	new FlashColor(LEDStrip.PURPLE, (short) 1000, (short) 500).start();
         Scheduler.getInstance().run();
     }
     
