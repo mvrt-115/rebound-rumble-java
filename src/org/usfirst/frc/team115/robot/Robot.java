@@ -13,6 +13,7 @@ import org.usfirst.frc.team115.robot.subsystems.Shooter;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -82,7 +83,8 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-		//new FadePulse(LEDStrip.PURPLE, LEDStrip.GOLD, (short) 5000).start();
+//		new FadePulse(LEDStrip.PURPLE, LEDStrip.GOLD, (short) 5000).start();
+//    	new FlashColor(LEDStrip.RED, (short)5000, (short)3000).start();;
     	if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -98,7 +100,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	new FlashColor(LEDStrip.PURPLE, (short) 1000, (short) 500).start();
+//    	new FlashColor(LEDStrip.PURPLE, (short) 1000, (short) 500).start();
         Scheduler.getInstance().run();
     }
     

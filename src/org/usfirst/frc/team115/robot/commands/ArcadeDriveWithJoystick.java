@@ -1,7 +1,6 @@
 package org.usfirst.frc.team115.robot.commands;
 
 import org.usfirst.frc.team115.robot.Robot;
-import org.usfirst.frc.team115.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -12,8 +11,15 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class ArcadeDriveWithJoystick extends Command {
 	
+	private boolean turn;
+	
 	public ArcadeDriveWithJoystick() {
 		requires(Robot.drive);
+	}
+	
+	public ArcadeDriveWithJoystick(boolean turn){
+		requires(Robot.drive);
+		this.turn = turn;
 	}
 
 	@Override
@@ -25,7 +31,7 @@ public class ArcadeDriveWithJoystick extends Command {
 	 */
 	@Override
 	protected void execute() {
-		Robot.drive.drive(Robot.oi.getJoystick());
+		Robot.drive.drive(Robot.oi.getJoystick(), turn);
 	}
 
 	@Override

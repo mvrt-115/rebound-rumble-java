@@ -16,7 +16,7 @@ public class DriveTrain extends Subsystem {
 	private final int BACK_RIGHT = 1;
 	private final int FRONT_LEFT = 2;
 	private final int FRONT_RIGHT = 3;
-	
+
 	/**
 	 * Initializes each other motors based on ports set in RobotMap
 	 */
@@ -28,7 +28,7 @@ public class DriveTrain extends Subsystem {
 		motors[FRONT_RIGHT] = new Talon(RobotMap.FRONT_RIGHT_DRIVE);
 		drive = new RobotDrive(motors[FRONT_LEFT], motors[BACK_LEFT], motors[FRONT_RIGHT], motors[BACK_RIGHT]);
 	}
-	
+
 	/**
 	 * Drives the robot
 	 * @param left The speed of the left motors
@@ -37,22 +37,25 @@ public class DriveTrain extends Subsystem {
 	public void drive(double left, double right) {
 		drive.setLeftRightMotorOutputs(left, right);
 	}
-	
+
 	/**
 	 * Drives the robot
 	 * @param joystick The joystick to drive based on
 	 */
-	public void drive(Joystick joystick) {
-		drive.arcadeDrive(joystick);
+	public void drive(Joystick joystick, boolean b) {
+		if(b)
+			drive.arcadeDrive(joystick.getY(), joystick.getZ());
+//		else
+			//drive.arcadeDrive(joystick.getY()/2, 0);
 	}
-	
+
 	/**
 	 * Resets the gyro, encoders, etc
 	 */
 	public void reset() {
 		// reset gyro, encoders, etc
 	}
-	
+
 	/**
 	 * Initializes the default command of the subsystem.
 	 */

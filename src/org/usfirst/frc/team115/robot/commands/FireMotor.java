@@ -2,6 +2,7 @@ package org.usfirst.frc.team115.robot.commands;
 
 import org.usfirst.frc.team115.robot.Constants;
 import org.usfirst.frc.team115.robot.Robot;
+import org.usfirst.frc.team115.robot.RobotMap;
 import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.Preferences;
@@ -24,8 +25,14 @@ public class FireMotor extends Command {
 	@Override
 	protected void initialize() {
 		try {
-			double speed = Preferences.getInstance().getDouble("ShooterSpeed", Constants.SHOOTER_MAX); 
-			Robot.shooter.setSpeed(speed);
+			//double speed = Preferences.getInstance().getDouble("ShooterSpeed", Constants.SHOOTER_MAX);
+			//Robot.shooter.setSpeed(Constants.SHOOTER_MAX);
+			if(Robot.oi.getJoystick().getRawButton(RobotMap.SHOOT_FAST))
+				Robot.shooter.setSpeed(Constants.SHOOTER_MAX - 0.3); 
+			else if(Robot.oi.getJoystick().getRawButton(RobotMap.SHOOT_SLOW))
+				Robot.shooter.setSpeed(Constants.SHOOTER_MAX - 0.5);
+			else
+				Robot.shooter.setSpeed(Constants.SHOOTER_MAX);
 			SmartDashboard.putNumber("shooter_speed", Robot.shooter.getSpeed());
 		} catch (MotorSpeedException e) {
 			Robot.shooter.stop();

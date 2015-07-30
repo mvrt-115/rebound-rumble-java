@@ -14,21 +14,23 @@ public class RobotMap {
 	 */
 
 	// joystick
-	public static final int JOYSTICK = 0;
+	public static final int JOYSTICK 			= 0;
 
 	// joystick buttons
-	public static final int SHOOT = 1;
-	public static final int DRIVE = 3;
-	public static final int FLAG = 6;
+	public static final int SHOOT 				= 1;
+	public static final int SHOOT_FAST 			= 3;
+	public static final int SHOOT_SLOW 			= 4;
+	public static final int TURN  				= 2;
+	public static final int FLAG 				= 6;
 
 	// motors
-	public static final int SHOOTER_1 = 3;
-	public static final int SHOOTER_2 = 2;
-	public static final int ROLLER = 9;
-	public static final int ELEVATOR = 4;
-	public static final int FRONT_LEFT_DRIVE = 0;
-	public static final int FRONT_RIGHT_DRIVE = 5;
-	public static final int BACK_LEFT_DRIVE = 1;
-	public static final int BACK_RIGHT_DRIVE = 6;
+	public static final int SHOOTER_1 			= 3;
+	public static final int SHOOTER_2 			= 2;
+	public static final int ROLLER 				= 9;
+	public static final int ELEVATOR 			= 4;
+	public static final int FRONT_LEFT_DRIVE 	= 0;
+	public static final int FRONT_RIGHT_DRIVE 	= 5;
+	public static final int BACK_LEFT_DRIVE 	= 1;
+	public static final int BACK_RIGHT_DRIVE 	= 6;
 }
 
