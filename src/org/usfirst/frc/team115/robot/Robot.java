@@ -8,7 +8,11 @@ import org.usfirst.frc.team115.robot.subsystems.Flag;
 import org.usfirst.frc.team115.robot.subsystems.Loader;
 import org.usfirst.frc.team115.robot.subsystems.Shooter;
 
+import com.kauailabs.navx_mxp.AHRS;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -28,6 +32,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain drive;
 	public static Flag flag;
 	public static CompressorSystem compressor;
+	public static AHRS navx;
 
     Command autonomousCommand; // null because I don't want to deal with this yet
     
@@ -37,6 +42,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
     	// initializes each subsystem on the robot
+    	navx = new AHRS(new SerialPort(57600, Port.kMXP));
     	shooter = new Shooter();
     	loader = new Loader();
     	drive = new DriveTrain();
