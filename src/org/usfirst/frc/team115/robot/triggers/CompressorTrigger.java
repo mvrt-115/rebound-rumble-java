@@ -3,7 +3,6 @@ package org.usfirst.frc.team115.robot.triggers;
 import org.usfirst.frc.team115.robot.Constants;
 import org.usfirst.frc.team115.robot.Robot;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 
 /**
