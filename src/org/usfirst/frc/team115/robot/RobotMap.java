@@ -46,5 +46,14 @@ public class RobotMap {
     public static final int DRIVE_ENCODER_LEFT_DIOB = 1;
     public static final int DRIVE_ENCODER_RIGHT_DIOA = 2;
     public static final int DRIVE_ENCODER_RIGHT_DIOB = 3;
+    
+    public static final double TURN_KP = 0;
+    public static final double TURN_KI = 0;
+    public static final double TURN_KD = 0;
+    public static final double TURN_KA = 0;
+    public static final double TURN_KV = 0;
+    public static final double TURN_ON_TARGET_ERROR = 0;
+    public static final double TURN_MAX_ACCEL = 0;
+    public static final double TURN_MAX_VELOCITY = 0;
 }
 
