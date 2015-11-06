@@ -1,6 +1,5 @@
 package org.usfirst.frc.team115.robot;
 
-import org.usfirst.frc.team115.robot.commands.ArcadeDriveWithJoystick;
 import org.usfirst.frc.team115.robot.commands.FireMotor;
 import org.usfirst.frc.team115.robot.commands.StopMotor;
 
@@ -25,7 +24,6 @@ public class OI {
 		
 		triggerButton.whenPressed(new FireMotor());
 		triggerButton.whenReleased(new StopMotor());
-		straightToggle.toggleWhenPressed(new ArcadeDriveWithJoystick(true));
 		//flagButton.toggleWhenPressed(new RaiseFlag());
 	}
 

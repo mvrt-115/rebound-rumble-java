@@ -11,15 +11,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class ArcadeDriveWithJoystick extends Command {
 	
-	private boolean turn;
-	
 	public ArcadeDriveWithJoystick() {
 		requires(Robot.drive);
-	}
-	
-	public ArcadeDriveWithJoystick(boolean turn){
-		requires(Robot.drive);
-		this.turn = turn;
 	}
 
 	@Override
@@ -31,7 +24,7 @@ public class ArcadeDriveWithJoystick extends Command {
 	 */
 	@Override
 	protected void execute() {
-		Robot.drive.drive(Robot.oi.getJoystick(), turn);
+		Robot.drive.drive(Robot.oi.getJoystick());
 	}
 
 	@Override

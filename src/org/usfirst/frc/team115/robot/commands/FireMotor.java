@@ -25,12 +25,10 @@ public class FireMotor extends Command {
 	@Override
 	protected void initialize() {
 		try {
-			//double speed = Preferences.getInstance().getDouble("ShooterSpeed", Constants.SHOOTER_MAX);
-			//Robot.shooter.setSpeed(Constants.SHOOTER_MAX);
 			if(Robot.oi.getJoystick().getRawButton(RobotMap.SHOOT_FAST))
 				Robot.shooter.setSpeed(Constants.SHOOTER_MAX - 0.3); 
 			else if(Robot.oi.getJoystick().getRawButton(RobotMap.SHOOT_SLOW))
-				Robot.shooter.setSpeed(Constants.SHOOTER_MAX - 0.5);
+				Robot.shooter.setSpeed(Constants.SHOOTER_MAX - 0.6);
 			else
 				Robot.shooter.setSpeed(Constants.SHOOTER_MAX);
 			SmartDashboard.putNumber("shooter_speed", Robot.shooter.getSpeed());

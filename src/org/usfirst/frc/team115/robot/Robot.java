@@ -2,25 +2,17 @@
 package org.usfirst.frc.team115.robot;
 
 import org.usfirst.frc.team115.robot.commands.Autonomous;
-import org.usfirst.frc.team115.robot.commands.led.FadePulse;
-import org.usfirst.frc.team115.robot.commands.led.FlashColor;
 import org.usfirst.frc.team115.robot.commands.led.Rainbow;
-import org.usfirst.frc.team115.robot.commands.led.SetColor;
 import org.usfirst.frc.team115.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team115.robot.subsystems.Flag;
+import org.usfirst.frc.team115.robot.subsystems.LEDStrip;
 import org.usfirst.frc.team115.robot.subsystems.Loader;
 import org.usfirst.frc.team115.robot.subsystems.Shooter;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Preferences;
-import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team115.robot.subsystems.LEDStrip;
 
 /**
  * The VM is configured to automatically run this class, and to call the

@@ -3,7 +3,6 @@ package org.usfirst.frc.team115.robot.subsystems;
 import org.usfirst.frc.team115.robot.RobotMap;
 import org.usfirst.frc.team115.robot.commands.ArcadeDriveWithJoystick;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
@@ -42,11 +41,8 @@ public class DriveTrain extends Subsystem {
 	 * Drives the robot
 	 * @param joystick The joystick to drive based on
 	 */
-	public void drive(Joystick joystick, boolean b) {
-		if(b)
-			drive.arcadeDrive(joystick.getY(), joystick.getZ());
-//		else
-			//drive.arcadeDrive(joystick.getY()/2, 0);
+	public void drive(Joystick joystick) {
+			drive.arcadeDrive(joystick.getY(), joystick.getX());
 	}
 
 	/**
