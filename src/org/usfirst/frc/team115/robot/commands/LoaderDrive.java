@@ -33,7 +33,7 @@ public class LoaderDrive extends Command {
 			Robot.loader.stop();
 		} else {
 			try {
-				Robot.loader.setSpeed(Robot.oi.getJoystick().getX());
+				Robot.loader.setSpeed(Robot.oi.getJoystick().getThrottle());
 			} catch (MotorSpeedException e) {
 				end();
 				e.printStackTrace();
@@ -49,7 +49,7 @@ public class LoaderDrive extends Command {
 	// Prevent runaway robot disorder
 	@Override
 	protected void end() {
-		Robot.loader.stop();;
+		Robot.loader.stop();
 	}
 
 	@Override

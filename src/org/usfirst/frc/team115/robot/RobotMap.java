@@ -7,10 +7,6 @@ package org.usfirst.frc.team115.robot;
  * @author Lee Mracek
  */
 public class RobotMap {
-	// pneumatics
-	public static final int FLAG_SOLENOID_1 = 0;
-	public static final int FLAG_SOLENOID_2 = 1;
-	
 	// joystick
 	public static final int JOYSTICK = 0;
 	
@@ -23,10 +19,10 @@ public class RobotMap {
     public static final int SHOOTER_2 = 4;
     public static final int ROLLER = 2;
     public static final int ELEVATOR = 1;
-    public static final int FRONT_LEFT_DRIVE = 7;
-    public static final int FRONT_RIGHT_DRIVE = 6;
-    public static final int BACK_LEFT_DRIVE = 8;
-    public static final int BACK_RIGHT_DRIVE = 5;
+    public static final int FRONT_LEFT_DRIVE = 0;
+    public static final int FRONT_RIGHT_DRIVE = 5;
+    public static final int BACK_LEFT_DRIVE = 1;
+    public static final int BACK_RIGHT_DRIVE = 6;
     
     public static final double DRIVE_POSITION_KP = 0;
     public static final double DRIVE_POSITION_KI = 0;
@@ -42,10 +38,8 @@ public class RobotMap {
     public static final double DRIVE_STRAIGHT_KI = 0;
     public static final double DRIVE_STRAIGHT_KD = 0;
     
-    public static final int DRIVE_ENCODER_LEFT_DIOA = 0;
-    public static final int DRIVE_ENCODER_LEFT_DIOB = 1;
-    public static final int DRIVE_ENCODER_RIGHT_DIOA = 2;
-    public static final int DRIVE_ENCODER_RIGHT_DIOB = 3;
+    public static final int DRIVE_ENCODER_RIGHT_DIOA = 0;
+    public static final int DRIVE_ENCODER_RIGHT_DIOB = 1;
     
     public static final double TURN_KP = 0;
     public static final double TURN_KI = 0;

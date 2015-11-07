@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
-import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * @author Lee Mracek
@@ -18,7 +18,7 @@ public abstract class VBusMotorSystem extends Subsystem {
 	* motors is an ArrayList that contains all the motors in the system. These are
 	* added by the subclass.
 	*/
-	protected ArrayList<CANTalon> motors = new ArrayList<CANTalon>();
+	protected ArrayList<Talon> motors = new ArrayList<Talon>();
 	private double speed;
 	protected boolean invert;
 	
@@ -27,7 +27,7 @@ public abstract class VBusMotorSystem extends Subsystem {
 	 * and setting their speeds to 0.
 	 */
 	public void stop() {
-		for (CANTalon motor : motors) {
+		for (Talon motor : motors) {
 			motor.set(0);
 		}
 	}
@@ -41,9 +41,9 @@ public abstract class VBusMotorSystem extends Subsystem {
 		this.speed = speed; // sets the speed of the system
 		// checks if the speed is within acceptable VBus range.
 		if (Math.abs(speed) <= 1) {
-			for (CANTalon motor : motors) {
+			for (Talon motor : motors) {
 				// sets each motor. If the output is inverted, multiplies by -1.
-				motor.set(invert ? -1 : 1 * this.speed);
+				motor.set((invert ? -1 : 1) * this.speed);
 			}
 		} else {
 			// throws a custom exception if the speed is not acceptable.

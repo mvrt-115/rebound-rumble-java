@@ -2,17 +2,15 @@
 package org.usfirst.frc.team115.robot;
 
 import org.usfirst.frc.team115.robot.commands.Autonomous;
-import org.usfirst.frc.team115.robot.subsystems.CompressorSystem;
 import org.usfirst.frc.team115.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team115.robot.subsystems.Flag;
 import org.usfirst.frc.team115.robot.subsystems.Loader;
 import org.usfirst.frc.team115.robot.subsystems.Shooter;
 
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -30,9 +28,8 @@ public class Robot extends IterativeRobot {
 	public static Shooter shooter;
 	public static Loader loader;
 	public static DriveTrain drive;
-	public static Flag flag;
-	public static CompressorSystem compressor;
 	public static AHRS navx;
+	public static PowerDistributionPanel pdp;
 
 	Command autonomousCommand; // null because I don't want to deal with this
 								// yet
@@ -47,12 +44,11 @@ public class Robot extends IterativeRobot {
     	shooter = new Shooter();
     	loader = new Loader();
     	drive = new DriveTrain();
-    	flag = new Flag();
-    	compressor = new CompressorSystem();
     	oi = new OI();
 		
     	// initializes command for autonomous
 		autonomousCommand = new Autonomous();
+		
     }
 
 	// runs periodically when the robot is disabled
