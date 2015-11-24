@@ -6,6 +6,7 @@ import org.usfirst.frc.team115.robot.exceptions.MotorSpeedException;
 
 import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.PIDCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -13,8 +14,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author Lee Mracek
  *
  */
-public class FireMotor extends Command {
+public class FireMotor extends PIDCommand {
+	private static final double kP, kI, kD;
 	public FireMotor() {
+		super(kP, kI, kD);
 		requires(Robot.shooter);
 	}
 
@@ -31,6 +34,7 @@ public class FireMotor extends Command {
 			Robot.shooter.stop();
 			e.printStackTrace();
 		}
+		getPIDController().setOutputRange(-1,1);
 	}
 
 	@Override
@@ -54,4 +58,18 @@ public class FireMotor extends Command {
 		end();
 	}
 
+	@Override
+	protected double returnPIDInput() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	protected void usePIDOutput(double output) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
+
+
